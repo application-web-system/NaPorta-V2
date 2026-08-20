@@ -296,10 +296,10 @@ export default defineConfig({
   [biblioteca para construção de gráficos do dashboard]
 
 - pnpm install axios
-  []
+  [biblioteca base para realizar requisições]
 
 - pnpm install zod
-  []
+  [biblioteca para validar a entrada de dados na aplicação]
 
 - pnpm install @tanstack/react-query
-  []
+  [biblioteca para realizar requisições do front ao backend (api)]
