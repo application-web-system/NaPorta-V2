@@ -96,9 +96,6 @@
 ### Entidades
 
 - [ ] Users
-- [ ] PasswordResetTokens
-- [ ] 
-- [ ] 
 
 ### Relacionamentos
 
@@ -111,6 +108,11 @@
 ### API
 
 #### Desenvolvimento
+
+#### Start Frontend
+- `pnpm run dev` — iniciar projeto para abrir no navegador
+- `pnpm run build` — iniciar o build do projeto
+- `pnpm run lint` — iniciar o lint pra corrigir o código
 
 #### Testes
 - `pnpm test` — executa os testes uma vez

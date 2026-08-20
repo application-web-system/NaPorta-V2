@@ -16,7 +16,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.containerTitle}>
-        <ThemedText type="default">Cycle Finance!</ThemedText>
+        <ThemedText type="default">NaPorta!</ThemedText>
         <HelloWave />
       </ThemedView>
     </ParallaxScrollView>
