@@ -1,0 +1,113 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  admin
+  member
+}
+
+enum OrderStatus {
+  pending
+  preparing
+  delivered
+  cancelled
+}
+
+enum MenuItemCategory {
+  breakfast
+  lunch
+  dinner
+  drinks
+  snacks
+}
+
+model User {
+  id String @id @default(uuid(7)) @db.Uuid
+
+  name  String
+  email String @unique
+
+  password_hash String
+  role          UserRole @default(member)
+
+  created_at DateTime @default(now())
+
+  @@map("users")
+}
+
+model Room {
+  id     String @id @default(uuid(7)) @db.Uuid
+  number String @unique
+
+  guests Guest[]
+
+  @@map("rooms")
+}
+
+model Guest {
+  id    String @id @default(uuid(7)) @db.Uuid
+  name  String
+  token String @unique @default(uuid())
+
+  room_id String @db.Uuid
+  room    Room   @relation(fields: [room_id], references: [id])
+
+  active     Boolean  @default(true)
+  checked_in DateTime @default(now())
+
+  orders Order[]
+
+  @@map("guests")
+}
+
+model MenuItem {
+  id          String           @id @default(uuid(7)) @db.Uuid
+  name        String
+  description String?
+  price       Decimal          @db.Decimal(10, 2)
+  image_url   String?
+  category    MenuItemCategory
+  available   Boolean          @default(true)
+
+  order_items OrderItem[]
+
+  @@map("menu_items")
+}
+
+model Order {
+  id         String      @id @default(uuid(7)) @db.Uuid
+  status     OrderStatus @default(pending)
+  created_at DateTime    @default(now())
+
+  guest_id String @db.Uuid
+  guest    Guest  @relation(fields: [guest_id], references: [id])
+
+  items OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id       String  @id @default(uuid(7)) @db.Uuid
+  quantity Int
+  price    Decimal @db.Decimal(10, 2)
+
+  order_id String @db.Uuid
+  order    Order  @relation(fields: [order_id], references: [id])
+
+  menu_item_id String   @db.Uuid
+  menu_item    MenuItem @relation(fields: [menu_item_id], references: [id])
+
+  @@map("order_items")
+}
