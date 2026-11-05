@@ -90,6 +90,13 @@
 
 ### Entidades
 
+- [ ] Users
+- [ ] Rooms
+- [ ] Guests
+- [ ] MenuItems
+- [ ] Orders
+- [ ] OrderItems
+
 ### Relacionamentos
 
 - Um usuário possui um quarto e possui várias refeições
