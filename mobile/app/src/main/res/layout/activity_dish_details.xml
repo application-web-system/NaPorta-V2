@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+
+        <!-- CONTEÚDO -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- IMAGEM DO PRATO -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <ImageView
+                        android:id="@+id/imgPrato"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/img_file_mignon"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Filé Mignon ao Molho Madeira" />
+
+                    <!-- VOLTAR -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="top|start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/bg_circle_white">
+
+                        <ImageView
+                            android:id="@+id/btnVoltar"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Voltar"
+                            android:src="@drawable/ic_arrow_back"
+                        />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </FrameLayout>
+
+                <!-- INFORMAÇÕES DO PRATO -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="22dp"
+                    android:paddingEnd="22dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="8dp">
+
+                    <!-- CATEGORIAS -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:paddingStart="11dp"
+                            android:paddingEnd="11dp"
+                            android:background="@drawable/bg_restricted"
+                            android:text="PRATOS PRINCIPAIS"
+                            android:textColor="#2F6BFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="8dp"
+                            android:gravity="center"
+                            android:paddingStart="11dp"
+                            android:paddingEnd="11dp"
+                            android:background="@drawable/bg_restricted"
+                            android:text="ALMOÇO"
+                            android:textColor="#2F6BFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <!-- TEMPO -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30–40 min"
+                            android:textColor="#737C8C"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- NOME DO PRATO -->
+                    <TextView
+                        android:id="@+id/txtNomePrato"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Filé Mignon ao Molho Madeira"
+                        android:textColor="#171D2B"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <!-- PREÇO -->
+                    <TextView
+                        android:id="@+id/txtPreco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="R$ 129,90"
+                        android:textColor="#2F6BFF"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <!-- DESCRIÇÃO -->
+                    <TextView
+                        android:id="@+id/txtDescricao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Medalhão de filé mignon grelhado no ponto, servido com molho madeira, cogumelos e batatas rústicas."
+                        android:textColor="#737C8C"
+                        android:textSize="16sp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <!-- OBSERVAÇÕES -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Observações"
+                        android:textColor="#172033"
+                        android:textSize="13sp" />
+
+                    <!-- CAMPO DE OBSERVAÇÕES -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="11dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#DCE0E6"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_message"
+                                android:contentDescription="@null"
+                            />
+
+                            <EditText
+                                android:id="@+id/edtObservacoes"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="10dp"
+                                android:background="@null"
+                                android:hint="Alguma preferência?"
+                                android:textColor="#172033"
+                                android:textColorHint="#7B8494"
+                                android:textSize="16sp"
+                                android:singleLine="true"
+                                android:inputType="textCapSentences"
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- QUANTIDADE -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Quantidade"
+                            android:textColor="#172033"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- DIMINUIR -->
+                        <ImageView
+                            android:id="@+id/btnDiminuir"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_minus_circle"
+                            android:contentDescription="Diminuir quantidade"
+                            />
+
+                        <!-- VALOR -->
+                        <TextView
+                            android:id="@+id/txtQuantidade"
+                            android:layout_width="44dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="#172033"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- AUMENTAR -->
+                        <ImageView
+                            android:id="@+id/btnAumentar"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_plus_circle"
+                            android:contentDescription="Aumentar quantidade"
+                            />
+
+                    </LinearLayout>
+
+                    <!-- BOTÃO ADICIONAR AO CARRINHO -->
+                    <FrameLayout
+                        android:id="@+id/btnAdicionarCarrinho"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_button"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="ADICIONAR AO CARRINHO"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- DIVISÓRIA -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E5E7EB" />
+
+        <!-- BOTTOM NAV -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF">
+
+            <!-- CARDÁPIO ATIVO -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="38dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_selected_nav">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_cutlery"
+                        android:contentDescription="@null"
+                    />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Cardápio"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#2F6BFF" />
+
+            </LinearLayout>
+
+            <!-- PEDIDOS -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_receipt"
+                    android:contentDescription="@null"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Pedidos"
+                    android:textSize="11sp"
+                    android:textColor="#626B7B" />
+
+            </LinearLayout>
+
+            <!-- CARRINHO -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_cart"
+                    android:contentDescription="@null"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Carrinho"
+                    android:textSize="11sp"
+                    android:textColor="#626B7B" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
