@@ -14,11 +14,6 @@
 
 ## Stack Ferramental
 
-- **Backend:** Node, Spring Boot;
-- **Frontend:** React;
-- **Mobile:** React Native;
-- **Tooling:** TypeScript, ESLint, Prettier.
-
 - **Backend:** Node.js, Fastify, PrismaORM v7, PostgreSQL, Redis, Docker, Zod.
 - **Mobile:** Java com Kotlin (Android Studio), Retrofit, Android API +24.
 - **Frontend:** React.js, React-Hook-Form, React-Router, Tanstack-Query, Shadcn, RadixUI, PhosphorIcons, Axios, Date-fns, Zod, Sonner, ReCharts, React-Helmet, Tailwindcss.
