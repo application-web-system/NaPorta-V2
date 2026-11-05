@@ -110,6 +110,9 @@
 #### Desenvolvimento
 
 #### Start Frontend
+- `pnpm install` — instalar depedências do projeto
+- `npx prisma migrate dev` — iniciar geração de arquivos .sql através do schema
+- `npx prisma generate`— gera arquivos de tipagem (representação) do banco
 - `pnpm run dev` — iniciar projeto para abrir no navegador
 - `pnpm run build` — iniciar o build do projeto
 - `pnpm run lint` — iniciar o lint pra corrigir o código

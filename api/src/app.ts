@@ -105,7 +105,7 @@ const createUserSchemaRequest = z.object({
 app.post("/users", async (req: FastifyRequest, reply: FastifyReply) => {
   const { name, email, password } = createUserSchemaRequest.parse(req.body);
 
-  const emailToLowerCase = email.trim().toLowerCase();
+  const emailToLowerCase = email.trim().toLowerCase(); // remover espaço começo/final e converter pra minúsculo
   const emailAlredyExists = await prisma.user.findUnique({
     where: {
       email: emailToLowerCase,
