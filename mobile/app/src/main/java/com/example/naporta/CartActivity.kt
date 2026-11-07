@@ -15,7 +15,7 @@ class CartActivity : AppCompatActivity() {
         onDecrease = { CartStore.decrease(it.productId) },
         onRemove = { CartStore.remove(it.productId) }
     )
-    private val cartObserver: (List<CartItem>) -> Unit = ::render
+    private val cartObserver: (List<CartItem>) -> Unit = { items -> render(items) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
