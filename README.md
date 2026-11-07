@@ -2,35 +2,34 @@
 
 ![alt text](logo.png)
 
-- Software web/mobile de delivery interno para gestão/controle de pedidos dos usuários do hotel, permitindos que os hóspedes realizem a solicitação de comidas, bebidas e outros serviços através de um QRCode que identifica o quarto, e respectivamente, o usuário solicitante.
+- Software mobile de delivery interno para gestão/controle de pedidos dos usuários do hotel, permitindos que os hóspedes realizem a solicitação de comidas, bebidas e outros serviços através de um QRCode que identifica o quarto, e respectivamente, o usuário solicitante.
 
-> 🚧 **Status:** Em planejamento
+> 🚧 **Status:** Em desenvolvimento
 
 ## Estrutura do Repositório
 
 - **API**: Armazena o código backend da aplicação;
-- **WEB**: Armazena a interface web do cliente;
 - **MOBILE**: Armazena a interface mobile do cliente.
+- **WEB**: Armazena a interface web do cliente;
 
 ## Stack Ferramental
 
-- **Backend:** Kotlin, Spring Boot;
-- **Frontend:** React;
-- **Mobile:** React Native;
+- **Backend:** Node.js, Fastify, PrismaORM v7, PostgreSQL, Redis, Docker, Zod.
+- **Mobile:** Java com Kotlin (Android Studio), Retrofit, Android API +24.
+- **Frontend:** React.js, React-Hook-Form, React-Router, Tanstack-Query, Shadcn, RadixUI, PhosphorIcons, Axios, Date-fns, Zod, Sonner, ReCharts, React-Helmet, Tailwindcss.
 - **Tooling:** TypeScript, ESLint, Prettier.
 
 ## Documentação de Negócio
 
 ## Arquitetura
 
-- API REST utilizando Spring Boot
+- API REST utilizando Nodejs
 - Autenticação baseada em JWT
 - Autenticação automática via Refresh Token (JWT)
 - Controle de acesso baseado em papéis (RBAC)
 - Persistência com PostgreSQL
 - Cache e Rate Limiting com Redis
 - Validação de entrada com Zod
-- H2 Database Drive
 
 ### Requisitos Funcionais (RF)
 
@@ -60,7 +59,7 @@
 ### Requisitos Não-Funcionais (RNF)
 
 - [ ] A senha do usuário precisa estar em formato hash;
-- [ ] Os dados da aplicação precisam estar persistidos em um banco H2 Database;
+- [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - [ ] Todas as listas de dados precisam estar paginadas com 15 itens por página; 
 - [ ] O banco de dados deve utilizar UUID v7 para performance e identificação;
 - [ ] O usuário deve ser identificado por um JWT (JSON Web Token) entre as requisições;
@@ -83,19 +82,27 @@
 - [ ] Os usuários, por padrão, recebem o cargo (permissão) de "membro";
 - [ ] O usuário não deve poder visualizar refeições de outros usuários;
 - [ ] O administrador pode visualizar todos os usuários;
-- [ ] Ao deletar uma conta, todas as despesas e categorias vinculadas devem ser deletadas em cascata.
-
-### Funcionalidades (FT)
-
-### Cobertura dos Testes Unitários
+- [ ] Ao deletar uma conta, todas os pedidos vinculados devem ser deletados em cascata.
 
 ## Fluxograma de Desenvolvimento
+
+![alt text](fluxograma.png)
 
 ## Estrutura do Banco de Dados
 
 ### Entidades
 
 - [ ] Users
+- [ ] Rooms
+- [ ] Guests
+- [ ] MenuItems
+- [ ] Orders
+- [ ] OrderItems
+- [ ] Categories
+- [ ] Payments
+- [ ] RefreshTokens
+- [ ] PasswordResetTokens
+- [ ] AuditLogs
 
 ### Relacionamentos
 
@@ -110,6 +117,9 @@
 #### Desenvolvimento
 
 #### Start Frontend
+- `pnpm install` — instalar depedências do projeto
+- `npx prisma migrate dev` — iniciar geração de arquivos .sql através do schema
+- `npx prisma generate`— gera arquivos de tipagem (representação) do banco
 - `pnpm run dev` — iniciar projeto para abrir no navegador
 - `pnpm run build` — iniciar o build do projeto
 - `pnpm run lint` — iniciar o lint pra corrigir o código
@@ -128,178 +138,3 @@
 - `pnpm format` — formata o código com Prettier
 
 ## Comandos de Desenvolvimento
-
-### Backend
-
-### Frontend
-
-- pnpm add tailwindcss @tailwindcss/vite
-  [instalação do tailwindcss no projeto, sendo necessário realizar modificações em vite.config.ts para aceitar "@" como raiz]
-
-- pnpm i @types/node -D
-  [para que o vite consiga trabalhar com aliases de importação no momento de build]
-
-- pnpm dlx shadcn-ui@latest init
-- npx shadcn@latest init
-  [instalação da biblioteca de componentes shadcn-ui e uso do cli para iniciar arquivo de configurações]
-
-- pnpm install localforage match-sorter sort-by
-  [instalação do react router dom mais dependencias de desenvolvimento]
-
-- pnpm create @eslint/config@latest
-  [gera a base do arquivo de configuração e instala as dependências iniciais do ESLint e TypeScript]
-
-- pnpm install -D prettier eslint-config-prettier prettier-plugin-tailwindcss eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
-  [instala apenas o que o CLI do ESLint não instala: Prettier, suporte para Tailwind e plugins específicos de React Hooks/Refresh]
-
-- configurar "eslint.config.ts" com plugins de React e Prettier
-  [é necessário configurar o arquivo (que pode ser mantido em .ts nas versões atuais) para injetar os plugins "react-hooks", "react-refresh" e o "eslint-config-prettier". Isso garante a aplicação das regras do React 19 e evita que o ESLint brigue com a formatação do Prettier]
-
-```Typescript
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
-import prettierConfig from "eslint-config-prettier";
-
-export default tseslint.config(
-  { ignores: ["dist", "build", "node_modules"] },
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
-  {
-    files: ["**/*.{ts,tsx}"],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
-    plugins: {
-      react: pluginReact,
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
-    },
-    rules: {
-      ...pluginReact.configs.flat.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
-      "react/react-in-jsx-scope": "off",
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
-    },
-  },
-  prettierConfig,
-);
-```
-
-- criar ".prettierrc.mjs" na raiz do projeto
-  [arquivo de configuração do Prettier usando padrão ESM. Inclui o "prettier-plugin-tailwindcss" para habilitar a ordenação automática das classes do Tailwind no atributo className ao salvar o arquivo]
-
-```Javascript
-/** @type {import("prettier").Config} */
-export default {
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'all',
-  printWidth: 80,
-  tabWidth: 2,
-  plugins: ['prettier-plugin-tailwindcss'],
-};
-```
-
-- criar ".prettierignore" na raiz do projeto
-  [arquivo para o Prettier ignorar diretórios como "node_modules", "dist" e "build", evitando processamento desnecessário e lentidão durante a formatação automática]
-
-```
-node_modules
-dist
-build
-```
-
-- configurar "resolve.alias" no "vite.config.ts"
-  [utiliza o módulo "path" do Node.js para mapear o caractere "@" diretamente para a pasta "src", permitindo resolver importações absolutas de forma manual sem dependências extras]
-
-```Typescript
-export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    react(),
-  ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
-  }
-});
-```
-
-- adicionar "baseUrl" e "paths" no "tsconfig.json"
-  [configuração obrigatória para que o TypeScript e o VS Code reconheçam o alias "@", habilitando o preenchimento automático (autocomplete) e a navegação entre arquivos]
-
-```Typescript
-"compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
-  }
-```
-
-- configurar ".vscode/settings.json" na pasta do projeto
-  [configuração de workspace que define o Prettier como formatador padrão e ativa o "source.fixAll.eslint". Isso faz com que o VS Code corrija erros de lint e organize as classes do Tailwind automaticamente ao salvar (Ctrl + S)]
-
-```Typescript
-{
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-}
-```
-
-- pnpm i -D eslint-plugin-simple-import-sort
-  [organiza importações dos arquivos no projeto]
-
-```Typescript
-  plugins: {
-    react: pluginReact,
-    "react-hooks": reactHooks,
-    "react-refresh": reactRefresh,
-    "simple-import-sort": simpleImportSort,
-  },
-  rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
-    },
-```
-
-- pnpm i react-hook-form zod @hookform/resolvers
-  [lidar com formulário no react utilizando validação com o zod e habilitando integração entre as ferramentas com resolvers]
-
-- pnpm install sonner
-  [biblioteca de componente toast já estilizado e pronto para uso]
-
-- pnpm i recharts
-  [biblioteca para construção de gráficos do dashboard]
-
-- pnpm install axios
-  [biblioteca base para realizar requisições]
-
-- pnpm install zod
-  [biblioteca para validar a entrada de dados na aplicação]
-
-- pnpm install @tanstack/react-query
-  [biblioteca para realizar requisições do front ao backend (api)]
