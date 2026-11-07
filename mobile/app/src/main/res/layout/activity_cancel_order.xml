@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <!-- LOGO -->
+        <FrameLayout
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_logo">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:src="@drawable/ic_hotel"
+                android:contentDescription="@null"
+                app:tint="#FFFFFF" />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="NAPORTA"
+            android:textColor="#172033"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- QUARTO -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:background="@drawable/bg_room">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUARTO"
+                android:textColor="#737C8C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text="102"
+                android:textColor="#172033"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- DIVISÓRIA -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E7EB" />
+
+    <!-- CONTEÚDO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="36dp"
+            android:paddingBottom="32dp">
+
+            <!-- TOPO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:baselineAligned="false">
+
+                <ImageView
+                    android:id="@+id/btnVoltar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:contentDescription="Voltar" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="24dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtNumeroPedido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pedido #9842"
+                        android:textColor="#172033"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Acompanhe seu histórico de pedidos."
+                        android:textColor="#737C8C"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TÍTULO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Conte por que deseja cancelar"
+                android:textColor="#172033"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- OPÇÃO 1 - SELECIONADA -->
+            <LinearLayout
+                android:id="@+id/option_ideia"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_cancel_reason_selected">
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_radio_selected_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Mudei de ideia"
+                    android:textColor="#172033"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- OPÇÃO 2 -->
+            <LinearLayout
+                android:id="@+id/option_espera"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_cancel_reason_default">
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_radio_unselected" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Tempo de espera muito longo"
+                    android:textColor="#172033"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- OPÇÃO 3 -->
+            <LinearLayout
+                android:id="@+id/option_errado"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_cancel_reason_default">
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_radio_unselected" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Pedido errado"
+                    android:textColor="#172033"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- OPÇÃO 4 -->
+            <LinearLayout
+                android:id="@+id/option_outro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_cancel_reason_default">
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_radio_unselected" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Outro motivo"
+                    android:textColor="#172033"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- LABEL COMENTÁRIO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Comentário adicional (opcional)"
+                android:textColor="#172033"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- INPUT COMENTÁRIO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_comment_input">
+
+                <EditText
+                    android:id="@+id/edt_comentario"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="Descreva aqui se necessário..."
+                    android:inputType="textCapSentences"
+                    android:padding="0dp"
+                    android:singleLine="true"
+                    android:textColor="#172033"
+                    android:textColorHint="#98A2B3"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <!-- BOTÃO -->
+            <TextView
+                android:id="@+id/btn_confirmar_cancelamento"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bg_confirm_cancel_button"
+                android:gravity="center"
+                android:text="CONFIRMAR CANCELAMENTO"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- DIVISÓRIA -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E7EB" />
+
+    <!-- BOTTOM NAV -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:baselineAligned="false">
+
+        <!-- CARDÁPIO -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_cutlery"
+                android:contentDescription="@null"
+                app:tint="#747D8C" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Cardápio"
+                android:textSize="11sp"
+                android:textColor="#626B7B" />
+
+        </LinearLayout>
+
+        <!-- PEDIDOS ATIVO -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_selected_nav">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_receipt"
+                    android:contentDescription="@null"
+                    app:tint="#2F6BFF" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Pedidos"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#2F6BFF" />
+
+        </LinearLayout>
+
+        <!-- CARRINHO -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cart"
+                    android:contentDescription="@null"
+                    app:tint="#747D8C" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_notification_dot_red" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Carrinho"
+                android:textSize="11sp"
+                android:textColor="#626B7B" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
