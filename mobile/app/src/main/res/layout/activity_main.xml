@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -7,79 +6,15 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- HEADER -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            app:cardBackgroundColor="#2F6BFF"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="0dp"
-            app:strokeWidth="0dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_hotel"
-                android:contentDescription="@null"
-                android:tint="#FFFFFF" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:text="NAPORTA"
-            android:textColor="#172033"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:background="@drawable/bg_room">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="QUARTO"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="#7C8492" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text=""
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#172033" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    <include
+        android:id="@+id/includeHeader"
+        layout="@layout/view_header" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#E6E8EC" />
 
-    <!-- CONTEÚDO -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -96,8 +31,6 @@
             android:paddingTop="24dp"
             android:paddingBottom="20dp">
 
-            <!-- SAUDAÇÃO -->
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,8 +45,6 @@
                 android:text="João da Silva"
                 android:textColor="#151B26"
                 android:textSize="14sp" />
-
-            <!-- CARDÁPIO -->
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -174,15 +105,11 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- LINHA 1 -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="118dp"
                 android:layout_marginTop="14dp"
                 android:orientation="horizontal">
-
-                <!-- MEUS PEDIDOS -->
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
@@ -245,8 +172,6 @@
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
-                <!-- ADMINISTRATIVO -->
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdministrativo"
@@ -313,15 +238,11 @@
 
             </LinearLayout>
 
-            <!-- LINHA 2 -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="118dp"
                 android:layout_marginTop="14dp"
                 android:orientation="horizontal">
-
-                <!-- PERFIL -->
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
@@ -384,8 +305,6 @@
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
-                <!-- SUPORTE -->
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
@@ -451,8 +370,6 @@
 
             </LinearLayout>
 
-            <!-- TEXTO -->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -460,8 +377,6 @@
                 android:text="Peça sua refeição sem sair do quarto"
                 android:textColor="#1B2434"
                 android:textSize="17sp" />
-
-            <!-- INFORMAÇÕES -->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -496,92 +411,8 @@
 
     </ScrollView>
 
-    <!-- BOTTOM NAV -->
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E6E8EC" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:background="#FFFFFF">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/ic_cutlery"
-                android:contentDescription="@null"
-                android:tint="#737B89" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="Cardápio"
-                android:textSize="11sp"
-                android:textColor="#687180" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/ic_receipt"
-                android:contentDescription="@null"
-                android:tint="#737B89" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="Pedidos"
-                android:textSize="11sp"
-                android:textColor="#687180" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btnCarrinho"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/ic_cart"
-                android:contentDescription="@null"
-                android:tint="#737B89" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="Carrinho"
-                android:textSize="11sp"
-                android:textColor="#687180" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    <include
+        android:id="@+id/includeFooter"
+        layout="@layout/view_footer" />
 
 </LinearLayout>
