@@ -2,6 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="brand_blue">#2862E9</color>
+    <color name="brand_blue_soft">#EAF0FF</color>
+    <color name="text_primary">#172033</color>
+    <color name="text_secondary">#6D7788</color>
+    <color name="line">#E4E8F0</color>
+    <color name="surface_soft">#F4F6FA</color>
+    <color name="danger">#ED2B5B</color>
     <color name="white">#747D8C</color>
-
 </resources>
