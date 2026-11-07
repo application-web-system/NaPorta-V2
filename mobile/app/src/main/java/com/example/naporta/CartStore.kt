@@ -50,6 +50,13 @@ object CartStore {
         notifyChanges()
     }
 
+    fun loadPreviewDataIfEmpty() {
+        if (mutableItems.isNotEmpty()) return
+        add(CartItem(1L, "Hambúrguer da Casa", 39.90, imageRes = R.drawable.img_hamburguer))
+        add(CartItem(2L, "Smash Duplo", 36.90, imageRes = R.drawable.img_hamburguer))
+        add(CartItem(3L, "Hambúrguer Bacon", 44.90, imageRes = R.drawable.img_hamburguer))
+    }
+
     private fun notifyChanges() {
         val snapshot = items
         observers.toList().forEach { observer ->

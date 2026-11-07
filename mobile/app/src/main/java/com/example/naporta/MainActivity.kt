@@ -12,19 +12,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val cardAdministrativo = findViewById<android.view.View>(R.id.cardAdministrativo)
-
-
-        cardAdministrativo.setOnClickListener {
-            val intent = Intent(this, AdminLoginActivity::class.java)
-            startActivity(intent)
+        findViewById<android.view.View>(R.id.cardAdmin).setOnClickListener {
+            startActivity(Intent(this, AdminLoginActivity::class.java))
         }
 
-        val btnCarrinho = findViewById<LinearLayout>(R.id.btnCarrinho)
-
-        btnCarrinho.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
-            startActivity(intent)
+        findViewById<LinearLayout>(R.id.btnCarrinho).setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
         }
+
+        CartStore.loadPreviewDataIfEmpty()
     }
 }

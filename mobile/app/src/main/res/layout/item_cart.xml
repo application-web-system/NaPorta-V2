@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginBottom="10dp"
+    android:layout_height="72dp"
+    android:layout_marginBottom="12dp"
     app:cardBackgroundColor="#FFFFFF"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="13dp"
     app:cardElevation="0dp"
     app:strokeColor="#E2E5EA"
     app:strokeWidth="1dp">
@@ -16,30 +16,30 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="11dp">
+        android:padding="9dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="76dp"
-            android:layout_height="76dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="58dp"
+            android:layout_height="58dp"
             app:cardCornerRadius="9dp"
             app:cardElevation="0dp"
-            app:cardUseCompatPadding="false">
+            app:strokeWidth="0dp">
 
             <ImageView
                 android:id="@+id/imgProduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/img_file_mignon"
                 android:scaleType="centerCrop"
+                android:src="@drawable/img_hamburguer"
                 android:contentDescription="Imagem do produto" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -48,73 +48,73 @@
                 android:layout_height="wrap_content"
                 android:text="Filé Mignon ao Molho Madeira"
                 android:textColor="#172033"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:maxLines="2"
                 android:ellipsize="end" />
 
             <TextView
                 android:id="@+id/txtPrice"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="R$ 48,90"
-                android:textColor="#2F6BFF"
-                android:textSize="16sp"
+                android:layout_marginTop="4dp"
+                android:text="R$ 129,90"
+                android:textColor="#172033"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/btnDelete"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="end"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_delete"
-                android:contentDescription="Remover produto" />
+            <TextView
+                android:id="@+id/btnDecrease"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/bg_quantity_button"
+                android:gravity="center"
+                android:text="−"
+                android:textColor="#2864FF"
+                android:textSize="17sp"
+                android:includeFontPadding="false" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txtQuantity"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#172033"
+                android:textSize="12sp" />
 
-                <ImageButton
-                    android:id="@+id/btnDecrease"
-                    android:layout_width="27dp"
-                    android:layout_height="36dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_minus_circle"
-                    android:contentDescription="Diminuir quantidade" />
-
-                <TextView
-                    android:id="@+id/txtQuantity"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textColor="#172033"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/btnIncrease"
-                    android:layout_width="27dp"
-                    android:layout_height="36dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_plus_circle"
-                    android:contentDescription="Aumentar quantidade" />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/btnIncrease"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/bg_quantity_button"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="#2864FF"
+                android:textSize="16sp"
+                android:includeFontPadding="false" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnDelete"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_remove_button"
+            android:gravity="center"
+            android:text="×"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:includeFontPadding="false" />
 
     </LinearLayout>
 

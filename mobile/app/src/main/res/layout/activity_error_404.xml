@@ -73,7 +73,7 @@
                 android:id="@+id/btnInicio"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="132dp"
                 android:background="@drawable/bg_button"
                 android:clickable="true"
                 android:focusable="true">
