@@ -59,7 +59,7 @@
 ### Requisitos Não-Funcionais (RNF)
 
 - [ ] A senha do usuário precisa estar em formato hash;
-- [ ] Os dados da aplicação precisam estar persistidos em um banco H2 Database;
+- [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - [ ] Todas as listas de dados precisam estar paginadas com 15 itens por página; 
 - [ ] O banco de dados deve utilizar UUID v7 para performance e identificação;
 - [ ] O usuário deve ser identificado por um JWT (JSON Web Token) entre as requisições;
@@ -82,9 +82,11 @@
 - [ ] Os usuários, por padrão, recebem o cargo (permissão) de "membro";
 - [ ] O usuário não deve poder visualizar refeições de outros usuários;
 - [ ] O administrador pode visualizar todos os usuários;
-- [ ] Ao deletar uma conta, todas as despesas e categorias vinculadas devem ser deletadas em cascata.
+- [ ] Ao deletar uma conta, todas os pedidos vinculados devem ser deletados em cascata.
 
 ## Fluxograma de Desenvolvimento
+
+![alt text](fluxograma.png)
 
 ## Estrutura do Banco de Dados
 
@@ -96,6 +98,11 @@
 - [ ] MenuItems
 - [ ] Orders
 - [ ] OrderItems
+- [ ] Categories
+- [ ] Payments
+- [ ] RefreshTokens
+- [ ] PasswordResetTokens
+- [ ] AuditLogs
 
 ### Relacionamentos
 
