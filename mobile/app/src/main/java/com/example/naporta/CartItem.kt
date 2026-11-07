@@ -1,5 +1,6 @@
 package com.example.naporta
 
+// Modelo de dados (definição de item do carrinho)
 data class CartItem(
     val productId: Long,
     val name: String,
@@ -9,3 +10,9 @@ data class CartItem(
 ) {
     val lineTotal: Double get() = unitPrice * quantity
 }
+
+/*
+ # Dependência de CartItem
+ - CartAdapter
+ - CartActivity
+ */

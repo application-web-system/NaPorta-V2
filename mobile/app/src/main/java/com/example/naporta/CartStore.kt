@@ -1,4 +1,13 @@
 package com.example.naporta
+
+/*
+    # Carrinho de compras em memória
+    - Guarda os itens do carrinho na memória RAM
+    - Se o app fechar, o carrinho é perdido
+    - Ideal para protótipos e testes
+    - Tem funções de adicionar, remover, aumentar/diminuir quantidade
+ */
+
 /** Carrinho local: vive somente enquanto o processo Android estiver aberto. */
 object CartStore {
     private val mutableItems = mutableListOf<CartItem>()

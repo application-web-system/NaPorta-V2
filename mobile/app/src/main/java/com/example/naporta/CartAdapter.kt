@@ -5,6 +5,12 @@ import androidx.recyclerview.widget.RecyclerView
 import java.text.NumberFormat
 import java.util.Locale
 
+/*
+    # CartAdapter
+    - Ponte entre os dados e o XML
+    - Pega o CartItem e preenche o item_cart.xml (nome, preço, imagem, botões)
+ */
+
 class CartAdapter(
     private val onIncrease: (CartItem) -> Unit,
     private val onDecrease: (CartItem) -> Unit,
