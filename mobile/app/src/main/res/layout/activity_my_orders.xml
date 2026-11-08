@@ -483,8 +483,8 @@
                 android:textStyle="bold"
                 app:backgroundTint="#2F6BFF"
                 app:cornerRadius="12dp"
-                app:insetTop="0dp"
-                app:insetBottom="0dp" />
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
 
         </LinearLayout>
 
