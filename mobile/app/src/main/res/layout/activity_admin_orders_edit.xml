@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- HEADER -->
     <include
         android:id="@+id/includeHeader"
         layout="@layout/view_header" />
@@ -16,7 +15,6 @@
         android:layout_height="1dp"
         android:background="#E6E8EC" />
 
-    <!-- CONTEÚDO SCROLLÁVEL -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,7 +28,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- TÍTULO E SUBTÍTULO -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +44,6 @@
                 android:textColor="#7C8492"
                 android:textSize="13sp" />
 
-            <!-- CARD: INFORMAÇÕES DO PEDIDO -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,7 +60,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Linha do Título e Status -->
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -99,7 +94,6 @@
                         android:layout_marginBottom="12dp"
                         android:background="#F0F2F5" />
 
-                    <!-- Hóspede -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -122,7 +116,6 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Quarto -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -146,7 +139,6 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Pagamento -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -173,7 +165,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- TÍTULO: ITENS DO PEDIDO -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -183,7 +174,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- CARD DE ITEM -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -201,7 +191,6 @@
                     android:orientation="horizontal"
                     android:padding="12dp">
 
-                    <!-- Imagem do Item -->
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
@@ -217,7 +206,6 @@
                             android:src="@drawable/img_hamburguer" />
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Detalhes do Item -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -242,7 +230,6 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <!-- Preço do Item -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -254,7 +241,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- TOTAL DO PEDIDO -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -279,7 +265,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- CAIXA DE OBSERVAÇÕES -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -305,7 +290,6 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- CAMPO: ATUALIZAR STATUS -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -344,7 +328,6 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <!-- BOTÃO ATUALIZAR PEDIDO -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnUpdateOrder"
                 android:layout_width="match_parent"
@@ -359,7 +342,6 @@
                 app:cornerRadius="14dp"
                 app:elevation="0dp" />
 
-            <!-- BOTÃO CANCELAR PEDIDO -->
             <TextView
                 android:id="@+id/txtCancelOrder"
                 android:layout_width="wrap_content"
@@ -377,7 +359,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- FOOTER -->
     <include
         android:id="@+id/includeFooter"
         layout="@layout/view_footer" />

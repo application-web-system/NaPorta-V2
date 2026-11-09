@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- HEADER -->
     <include
         android:id="@+id/includeHeader"
         layout="@layout/view_header" />
@@ -16,7 +15,6 @@
         android:layout_height="1dp"
         android:background="#E6E8EC" />
 
-    <!-- CONTEÚDO SCROLLÁVEL -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,7 +28,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- TÍTULO E SUBTÍTULO -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +44,6 @@
                 android:textColor="#7C8492"
                 android:textSize="13sp" />
 
-            <!-- CAMPO 1: NOME -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +78,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- CAMPO 2: PREÇO -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,7 +112,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- CAMPO 3: CATEGORIA -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -186,7 +180,6 @@
                 </HorizontalScrollView>
             </LinearLayout>
 
-            <!-- CAMPO 4: IMAGEM -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -241,7 +234,6 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <!-- CAMPO 4: DESCRIÇÃO -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -276,7 +268,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- CAMPO 5: DISPONIBILIDADE (SWITCH) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -313,7 +304,6 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <!-- TÍTULO: PREVIEW -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -323,7 +313,6 @@
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
-            <!-- CARD DE PREVIEW -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -397,7 +386,6 @@
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- BOTÃO CADASTRAR ITEM -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCreateItem"
                 android:layout_width="match_parent"
@@ -412,7 +400,6 @@
                 app:cornerRadius="14dp"
                 app:elevation="0dp" />
 
-            <!-- BOTÃO CANCELAR -->
             <TextView
                 android:id="@+id/txtCancel"
                 android:layout_width="wrap_content"
@@ -430,7 +417,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- FOOTER -->
     <include
         android:id="@+id/includeFooter"
         layout="@layout/view_footer" />
