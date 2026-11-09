@@ -5,6 +5,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 
+/*
+    # CartActivity
+    - carrega o activity_cart.xml
+    - usa o adapter
+    - observa o store
+    - calcula o total
+ */
+
 class CartActivity : AppCompatActivity() {
     private lateinit var recyclerCart: androidx.recyclerview.widget.RecyclerView
     private lateinit var txtSubtotal: android.widget.TextView
@@ -15,7 +23,7 @@ class CartActivity : AppCompatActivity() {
         onDecrease = { CartStore.decrease(it.productId) },
         onRemove = { CartStore.remove(it.productId) }
     )
-    private val cartObserver: (List<CartItem>) -> Unit = ::render
+    private val cartObserver: (List<CartItem>) -> Unit = { items -> render(items) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

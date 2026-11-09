@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.naporta"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.naporta"
@@ -20,9 +18,7 @@ android {
 
     buildTypes {
         release {
-            optimization {
-                enable = false
-            }
+            isMinifyEnabled = false
         }
     }
     compileOptions {

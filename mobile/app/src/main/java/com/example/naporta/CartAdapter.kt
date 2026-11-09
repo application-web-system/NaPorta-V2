@@ -5,6 +5,12 @@ import androidx.recyclerview.widget.RecyclerView
 import java.text.NumberFormat
 import java.util.Locale
 
+/*
+    # CartAdapter
+    - Ponte entre os dados e o XML
+    - Pega o CartItem e preenche o item_cart.xml (nome, preço, imagem, botões)
+ */
+
 class CartAdapter(
     private val onIncrease: (CartItem) -> Unit,
     private val onDecrease: (CartItem) -> Unit,
@@ -37,7 +43,7 @@ class CartAdapter(
             txtName.text = item.name
             txtPrice.text = money(item.unitPrice)
             txtQuantity.text = item.quantity.toString()
-            item.imageRes?.let(imgProduct::setImageResource) ?: imgProduct.setImageResource(R.drawable.img_file_mignon)
+            item.imageRes?.let(imgProduct::setImageResource) ?: imgProduct.setImageResource(R.drawable.img_hamburguer)
             btnIncrease.setOnClickListener { onIncrease(item) }
             btnDecrease.setOnClickListener { onDecrease(item) }
             btnDelete.setOnClickListener { onRemove(item) }
