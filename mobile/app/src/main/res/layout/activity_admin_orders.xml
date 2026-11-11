@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/includeHeader"
-        layout="@layout/view_header" />
+        layout="@layout/view_header_admin" />
 
     <View
         android:layout_width="match_parent"

@@ -40,13 +40,23 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtGuestName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="João da Silva"
+                android:text=""
                 android:textColor="#151B26"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRoomNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text=""
+                android:textColor="#7A8291"
+                android:textSize="13sp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardMenu"
@@ -198,6 +208,24 @@
                     android:textSize="12sp" />
 
             </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanQrCode"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Escanear QRCode / Inserir token"
+                android:textAllCaps="false"
+                android:textColor="#2F6BFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="#EEF2FF"
+                app:cornerRadius="14dp"
+                app:elevation="0dp"
+                app:icon="@drawable/ic_shield"
+                app:iconTint="#2F6BFF"
+                app:iconGravity="textStart" />
 
         </LinearLayout>
 

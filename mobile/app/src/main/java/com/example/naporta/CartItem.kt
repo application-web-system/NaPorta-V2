@@ -1,18 +1,12 @@
 package com.example.naporta
 
-// Modelo de dados (definição de item do carrinho)
 data class CartItem(
-    val productId: Long,
+    val productId: Long,       // hash do UUID, usado como chave local
+    val menuItemId: String,    // UUID real do MenuItem para enviar à API
     val name: String,
-    val unitPrice: Double,
-    val quantity: Int = 1,
-    val imageRes: Int? = null
+    val price: Double,
+    val imageUrl: String = "",
+    val quantity: Int = 1
 ) {
-    val lineTotal: Double get() = unitPrice * quantity
+    val lineTotal: Double get() = price * quantity
 }
-
-/*
- # Dependência de CartItem
- - CartAdapter
- - CartActivity
- */

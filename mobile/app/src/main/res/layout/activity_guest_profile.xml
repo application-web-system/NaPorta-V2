@@ -42,10 +42,14 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/btnBack"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_back"
                     android:contentDescription="Voltar"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:tint="#172033" />
 
                 <TextView
@@ -78,10 +82,11 @@
                     app:cardElevation="0dp">
 
                     <TextView
+                        android:id="@+id/txtProfileInitials"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="JS"
+                        android:text=""
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -96,18 +101,20 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/txtProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="João da Silva"
+                        android:text=""
                         android:textColor="#172033"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txtProfileRoom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Quarto 102 • Até 14 set"
+                        android:text=""
                         android:textColor="#737C8C"
                         android:textSize="13sp" />
 
@@ -171,10 +178,11 @@
                                 android:textSize="13sp" />
 
                             <TextView
+                                android:id="@+id/txtProfileNameDetail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="João da Silva"
+                                android:text=""
                                 android:textColor="#737C8C"
                                 android:textSize="13sp" />
 

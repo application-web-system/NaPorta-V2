@@ -16,6 +16,7 @@
         android:background="#FFFFFF"
         android:orientation="horizontal">
 
+        <!-- Cardápio -->
         <LinearLayout
             android:id="@+id/btnMenu"
             android:layout_width="0dp"
@@ -26,30 +27,33 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/bgMenu"
                 android:layout_width="56dp"
                 android:layout_height="32dp"
-                android:background="@drawable/bg_nav_active"
+                android:background="@android:color/transparent"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/icMenu"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:contentDescription="@null"
                     android:src="@drawable/ic_cutlery"
-                    app:tint="#2F6BFF" />
+                    app:tint="#737B89" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/lblMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Cardápio"
-                android:textColor="#2F6BFF"
-                android:textSize="11sp"
-                android:textStyle="bold" />
+                android:textColor="#687180"
+                android:textSize="11sp" />
 
         </LinearLayout>
 
+        <!-- Pedidos -->
         <LinearLayout
             android:id="@+id/btnOrders"
             android:layout_width="0dp"
@@ -59,24 +63,34 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="4dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_receipt"
-                app:tint="#737B89" />
+            <LinearLayout
+                android:id="@+id/bgOrders"
+                android:layout_width="56dp"
+                android:layout_height="32dp"
+                android:background="@android:color/transparent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/icOrders"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_receipt"
+                    app:tint="#737B89" />
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/lblOrders"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:text="Pedidos"
                 android:textColor="#687180"
                 android:textSize="11sp" />
 
         </LinearLayout>
 
+        <!-- Carrinho -->
         <LinearLayout
             android:id="@+id/btnCarrinho"
             android:layout_width="0dp"
@@ -86,18 +100,27 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="4dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_cart"
-                app:tint="#737B89" />
+            <LinearLayout
+                android:id="@+id/bgCarrinho"
+                android:layout_width="56dp"
+                android:layout_height="32dp"
+                android:background="@android:color/transparent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/icCarrinho"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_cart"
+                    app:tint="#737B89" />
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/lblCarrinho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:text="Carrinho"
                 android:textColor="#687180"
                 android:textSize="11sp" />

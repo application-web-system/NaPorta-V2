@@ -1,21 +1,18 @@
 package com.example.naporta
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import java.text.NumberFormat
 import java.util.Locale
-
-/*
-    # CartAdapter
-    - Ponte entre os dados e o XML
-    - Pega o CartItem e preenche o item_cart.xml (nome, preço, imagem, botões)
- */
 
 class CartAdapter(
     private val onIncrease: (CartItem) -> Unit,
     private val onDecrease: (CartItem) -> Unit,
     private val onRemove: (CartItem) -> Unit
 ) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {
+
     private var items: List<CartItem> = emptyList()
 
     fun submitList(newItems: List<CartItem>) {
@@ -41,9 +38,13 @@ class CartAdapter(
 
         fun bind(item: CartItem) {
             txtName.text = item.name
-            txtPrice.text = money(item.unitPrice)
+            txtPrice.text = money(item.price)
             txtQuantity.text = item.quantity.toString()
-            item.imageRes?.let(imgProduct::setImageResource) ?: imgProduct.setImageResource(R.drawable.img_hamburguer)
+            if (item.imageUrl.isNotBlank()) {
+                Glide.with(itemView.context).load(item.imageUrl).centerCrop().into(imgProduct)
+            } else {
+                imgProduct.setImageResource(R.drawable.img_hamburguer)
+            }
             btnIncrease.setOnClickListener { onIncrease(item) }
             btnDecrease.setOnClickListener { onDecrease(item) }
             btnDelete.setOnClickListener { onRemove(item) }

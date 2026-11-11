@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp">
+
+    <EditText
+        android:id="@+id/etMenuName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Nome do item"
+        android:inputType="textCapSentences"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/etMenuDesc"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="Descrição"
+        android:inputType="textCapSentences"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/etMenuPrice"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="Preço (ex: 29.90)"
+        android:inputType="numberDecimal"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/etMenuImageUrl"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="URL da imagem (opcional)"
+        android:inputType="textUri"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/etMenuCategory"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="Categoria (breakfast/lunch/dinner/drinks/snacks)"
+        android:inputType="text"
+        android:textSize="15sp" />
+
+</LinearLayout>

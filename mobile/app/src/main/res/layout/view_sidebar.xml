@@ -10,7 +10,7 @@
     <!-- HEADER -->
     <include
         android:id="@+id/includeHeader"
-        layout="@layout/view_header" />
+        layout="@layout/view_header_admin" />
 
     <View
         android:layout_width="match_parent"
@@ -309,9 +309,5 @@
 
     </LinearLayout>
 
-    <!-- FOOTER -->
-    <include
-        android:id="@+id/includeFooter"
-        layout="@layout/view_footer" />
 
 </LinearLayout>

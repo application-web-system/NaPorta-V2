@@ -8,23 +8,35 @@
     android:paddingEnd="16dp"
     android:background="#FFFFFF">
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/bg_header_icon"
-        android:padding="6dp"
-        android:src="@drawable/ic_hotel"
-        android:scaleType="fitCenter"
-        android:contentDescription="Logo NaPorta" />
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/headerLogo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="NAPORTA"
-        android:textColor="#172033"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_header_icon"
+            android:padding="6dp"
+            android:src="@drawable/ic_hotel"
+            android:scaleType="fitCenter"
+            android:contentDescription="Logo NaPorta" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="NAPORTA"
+            android:textColor="#172033"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <View
         android:layout_width="0dp"
@@ -52,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:text="102"
+            android:text=""
             android:textColor="#172033"
             android:textSize="12sp"
             android:textStyle="bold" />
